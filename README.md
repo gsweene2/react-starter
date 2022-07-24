@@ -5,3 +5,5 @@
 * Installed React Router
 * Initialized 3 Pages
 * Created Footer
+
+![Homepage](src/assets/react-starter-site-home.png)
