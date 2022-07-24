@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+// Library CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './App.css';
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+import About from './pages/About';
+import Users from './pages/Users';
+import Home from './pages/Home';
+import CustomNavbar from './components/CustomNavbar';
+import { Container } from 'react-bootstrap';
+import CustomFooter from './components/CustomFooter';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <CustomNavbar />
+      <Container>
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </Container>
+      <CustomFooter />
+    </Router>
   );
 }
 
